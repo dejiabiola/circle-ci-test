@@ -44,8 +44,8 @@ class App extends Component {
     return (
       <div>
         <Picker value={selectedSubreddit}
-                onChange={this.handleChange}
-                options={[ 'reactjs', 'frontend' ]} />
+          onChange={this.handleChange}
+          options={['reactjs', 'frontend']} />
         <p>
           {lastUpdated &&
             <span>
@@ -62,8 +62,8 @@ class App extends Component {
         {isEmpty
           ? (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
           : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-              <Posts posts={posts} />
-            </div>
+            <Posts posts={posts} />
+          </div>
         }
       </div>
     )
@@ -88,5 +88,7 @@ const mapStateToProps = state => {
     lastUpdated
   }
 }
+
+export { App };
 
 export default connect(mapStateToProps)(App)
