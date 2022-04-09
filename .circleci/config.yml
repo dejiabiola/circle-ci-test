@@ -9,9 +9,6 @@ jobs:
       - restore_cache:
           key: npm-cache-v1-{{ checksum "package-lock.json" }}
       - run:
-          name: Install netlify cli globally
-          command: npm install --unsafe-perm=true -g netlify-cli
-      - run:
           name: Install Dependencies
           command: npm ci
       - save_cache:
