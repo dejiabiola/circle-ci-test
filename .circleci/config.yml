@@ -1,4 +1,3 @@
-version: 2
 jobs:
   build:
     working_directory: ~/redux-async
@@ -29,6 +28,7 @@ jobs:
           name: Deploy to Netlify
           command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=build
 workflows:
+  version: 2
   build-deploy:
     jobs:
       - build:
